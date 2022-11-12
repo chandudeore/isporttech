@@ -3,6 +3,7 @@
 
 }
 .app2{
+
   width: 50%;
   margin: auto;
   display: flex;
@@ -11,7 +12,31 @@
   gap: 5px;
 }
 .date{
-  border: 1px solid #000000;
-  padding: 5px;
+    background-color: #f1efef;
+  padding: 15px 10px;
   cursor: pointer;
+  border-radius: 40px;
+}
+.date:hover{
+   background-color: #b02727;
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+.app2 {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 10px;
+    padding: 20px;
+    gap: 5px;
+  }
+}
+@media screen and (min-width: 0) and (max-width: 375px) {
+  .app{
+    width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      padding: 20px;
+      grid-gap: 5px;
+
+  }
 }

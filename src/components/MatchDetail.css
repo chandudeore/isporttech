@@ -27,8 +27,15 @@
     border: 1px solid #000000 ;
     border-radius: 5px;
 }
+
 .betName{
    font-size: 18px;
    font-weight: 500;
    color: #3a9979;
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+    .match{
+        width: 50%;
+    }
+        
 }
