@@ -1,0 +1,34 @@
+.match{
+    border: 3px solid #497174;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.detail{
+    padding: 15px 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.mainDiv{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+}
+.selectMain{
+    font-size: 14px;
+    color: #000000;
+    padding: 5px 0;
+    border: 1px solid #000000 ;
+    border-radius: 5px;
+}
+.betName{
+   font-size: 18px;
+   font-weight: 500;
+   color: #3a9979;
+}
