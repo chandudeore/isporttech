@@ -39,7 +39,7 @@ function Fixture() {
   const getData = async () => {
     try {
       await fetch(
-        "http://cms.bettorlogic.com/api/BetBuilder/GetFixtures?sports=1"
+        "https://cms.bettorlogic.com/api/BetBuilder/GetFixtures?sports=1"
       )
         .then((res) => res.json())
         .then((res) => {
