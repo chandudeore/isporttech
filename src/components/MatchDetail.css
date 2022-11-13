@@ -1,15 +1,58 @@
+.backMain{
+    width: 50%;
+margin: auto;
+text-align: start;
+margin-bottom: 10px;
+}
+.back{
+    width: 14%;
+    text-align: center;
+    background-color: #ed3535;
+    color: #fff;
+    padding: 5px 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.makeMain{
+        width: 50%;
+        margin: auto;
+        text-align: start;
+        margin-bottom: 10px;
+        background-color: #ed3535;
+}
+.make{
+    width: 100%;
+    text-align: start;
+    font-size: 24px;
+    padding: 10px 25px;
+    color: #fff;
+    font-weight: bold;
+}
 .match{
-    border: 3px solid #497174;
-    width: 30%;
+    width: 50%;
     margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     margin-bottom: 20px;
     border-radius: 5px;
 }
-.detail{
+.detail1{
+    width: 100%;
     padding: 15px 0;
     font-size: 22px;
     font-weight: 500;
-    color: #000000;
+    background-color: #ed3535;
+}
+.date3{
+   color: #fff;
+}
+.detail2{
+    width: 100%;
+    background-color: #000000;
+    padding: 15px 0;
+    font-size: 22px;
+    color: #fff;
 }
 
 .mainDiv{
@@ -31,11 +74,17 @@
 .betName{
    font-size: 18px;
    font-weight: 500;
-   color: #3a9979;
+   color: #000000;
 }
 @media screen and (min-width: 375px) and (max-width: 768px) {
     .match{
         width: 50%;
     }
         
+}
+.betBuilder{
+    font-size: 22px ;
+    font-weight: 500;
+    color: #000001;
+    text-align: center;
 }
