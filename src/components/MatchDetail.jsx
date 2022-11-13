@@ -28,14 +28,14 @@ function MatchDetail() {
 
   const navigate = useNavigate();
   const handleClick = () => {
-    fetch("http://cms.bettorlogic.com/api/BetBuilder/GetMarkets?sports=1")
+    fetch("https://cms.bettorlogic.com/api/BetBuilder/GetMarkets?sports=1")
       .then((res) => res.json())
       .then((res) => setBetSlip(res))
       .catch((err) => console.log(err));
   };
 
   const getLeg = () => {
-    fetch("http://cms.bettorlogic.com/api/BetBuilder/GetSelections?sports=1")
+    fetch("https://cms.bettorlogic.com/api/BetBuilder/GetSelections?sports=1")
       .then((res) => res.json())
       .then((res) => setLeg(res))
       .catch((err) => console.log(err));
