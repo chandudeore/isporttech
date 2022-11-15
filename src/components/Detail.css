@@ -1,0 +1,14 @@
+.main {
+    width: 100%;
+    border: 1px solid red;
+    background-color: #f1efef;
+    padding: 20px 0;
+    width: 50%;
+    border: 1px solid #cccdd4;
+    margin: auto;
+    border-radius: 10px;
+}
+.main2 {
+    padding: 15px 0;
+    cursor: pointer;
+}

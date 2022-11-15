@@ -1,12 +1,21 @@
 import React, { memo } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import Detail from "./Detail";
 import "./Fixture.css";
 
 function Fixture() {
+  const today = new Date();
+  let dateArr = [];
+  const handleFun = () => {
+    dateArr.push(today.setDate(today.getDate()));
+    for (let i = 1; i < 7; i++) {
+      dateArr.push(today.setDate(today.getDate() + 1));
+    }
+  };
+  handleFun();
   const [data, setData] = useState([]);
-  // const [newData, setNewData] = useState([]);
+  const [newData, setNewData] = useState([]);
 
   const sortData = (arr) => {
     let tempArr = [];
@@ -31,10 +40,38 @@ function Fixture() {
       }
     });
     setData(tempArr);
-    //console.log(tempArr);
   };
 
-  const navigate = useNavigate();
+  const handleDate = (date) => {
+    let today = new Date(date);
+    let date1 = today.toLocaleDateString();
+    getNewDate(date1, newData);
+  };
+
+  const getNewDate = (date1, arr) => {
+    let tempArr = [];
+    arr.map((item) => {
+      let date = new Date(item.MatchDate);
+      if (date.toLocaleDateString() === date1) {
+        tempArr.push(item);
+      }
+    });
+    //console.log(tempArr);
+    sortData(tempArr);
+  };
+
+  const filterdata = (arr) => {
+    let tempArr = [];
+    arr.map((item) => {
+      let date = new Date(item.MatchDate);
+      let todayDate = new Date();
+      if (date.toLocaleDateString() === todayDate.toLocaleDateString()) {
+        tempArr.push(item);
+      }
+    });
+
+    sortData(tempArr);
+  };
 
   const getData = async () => {
     try {
@@ -43,19 +80,13 @@ function Fixture() {
       )
         .then((res) => res.json())
         .then((res) => {
-          //setData(res);
-          sortData(res);
+          setNewData(res);
+          filterdata(res);
         })
         .catch((err) => console.log(err));
     } catch (err) {
       console.log(err);
     }
-  };
-
-  const handleClick = (index1) => {
-    //console.log(index1);
-    localStorage.setItem("bet", JSON.stringify(index1));
-    navigate("/bet");
   };
 
   useEffect(() => {
@@ -64,37 +95,42 @@ function Fixture() {
 
   return (
     <>
-      <div>
-        <div className="football">FootBall</div>
-        <div className="main">
-          {data.map((item) => {
+      <div className="app1">
+        <div className="app2">
+          {dateArr.map((item, index) => {
+            let date = new Date(item);
+
             return (
               <>
-                <div className="container">
-                  <div className="sortData">
-                    <span className="item1">{item.Country}</span>
-                    <span className="item1">{item.LeagueName}</span>
-                  </div>
-                  <div className="main1">
-                    {item.obj.map((item2, index) => {
-                      return (
-                        <>
-                          <div
-                            className="main2"
-                            onClick={() => handleClick(item2)}
-                          >
-                            <div className="main3">{item2.MatchName}</div>
-                            <div className="main3"></div>
-                          </div>
-                          <hr />
-                        </>
-                      );
-                    })}
-                  </div>
+                <div
+                  key={index}
+                  className="date"
+                  onClick={() => {
+                    handleDate(item);
+                  }}
+                >
+                  {date.getDate() +
+                    "/" +
+                    date.getMonth() +
+                    "/" +
+                    date.getFullYear()}
                 </div>
               </>
             );
           })}
+        </div>
+        <div className="football1">
+          <img
+            src="https://cdn.pixabay.com/photo/2013/07/13/10/51/football-157930__340.png"
+            alt=""
+            className="img1"
+            width="20px"
+            height="20px"
+          />
+          <span className="football">FootBall</span>
+        </div>
+        <div>
+          <Detail data={data} />
         </div>
       </div>
     </>
