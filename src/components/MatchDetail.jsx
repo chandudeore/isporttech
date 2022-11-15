@@ -53,8 +53,14 @@ function MatchDetail() {
   return (
     <>
       <div className="backMain">
-        <div className="back" onClick={handleBack}>
-          Back
+        <div onClick={handleBack}>
+          <img
+            className="back"
+            src="https://cdn-icons-png.flaticon.com/128/507/507257.png"
+            width="20px"
+            height="20px"
+            alt=""
+          />
         </div>
       </div>
       <div className="makeMain">

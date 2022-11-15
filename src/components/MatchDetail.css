@@ -5,12 +5,12 @@ text-align: start;
 margin-bottom: 10px;
 }
 .back{
-    width: 14%;
+    margin-top: 10px;
     text-align: center;
     background-color: #ed3535;
     color: #fff;
     padding: 5px 5px;
-    border-radius: 15px;
+    border-radius: 100px;
     cursor: pointer;
 }
 .makeMain{
@@ -81,6 +81,12 @@ margin-bottom: 10px;
         width: 50%;
     }
         
+}
+@media screen and (min-width:0) and (max-width:375) {
+    .mainDiv{
+        width: 100%;
+    }
+    
 }
 .betBuilder{
     font-size: 22px ;

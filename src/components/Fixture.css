@@ -6,8 +6,9 @@
     margin: auto;
     text-align: start;
     padding: 15px 0;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 500;
+    margin-left: 10px;
 }
 
 .sortData{
@@ -29,6 +30,8 @@
 .football1{
     margin-top: 10px;
     text-align: start;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 .date {
     width: 100%;
